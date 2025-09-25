@@ -1,6 +1,6 @@
 # Reflection
 
-This week's assignment is all about creating and maintaining apps that submit and retrieve info from a database. This is a fundamental part of web development. It’s pretty cool when you think about it—so many of the apps and websites we use daily, like Facebook, Instagram, and banking app, are essentially database-driven. It's really made me see how crucial databases are to the tech world.
+This week's assignment is all about creating and maintaining apps that submit and retrieve info from a database. This is a fundamental part of web development. So many of the apps and websites we use daily, like Facebook, Instagram, and banking app, are essentially database-driven. It's really made me see how crucial databases are to the tech world.
 
 ...
 
