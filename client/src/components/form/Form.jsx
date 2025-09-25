@@ -3,60 +3,82 @@ import "./Form.css";
 import { useState } from "react";
 
 export default function Form() {
-  const [formData, setFromData] = useState({
+  const [formData, setFormData] = useState({
     gamename: "",
     name: "",
     review: "",
   });
 
-  function handleInputChange(event) {
-    setFromData({ ...formData, [event.target.name]: event.target.value });
-  }
+  // Handles the input fields
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-  function handleSubmit(event) {
+  // Handles the form submit
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // This is where STEP 4 would go
-    // Fetch POST server route
-    // Add headers and body
-    console.log(formData);
-  }
+
+    try {
+      const response = await fetch("http://localhost:8080/add-reviews", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        setFormData({
+          gamename: "",
+          name: "",
+          review: "",
+        });
+      } else {
+        console.error("Failed to submit the review.");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
 
   return (
-    <>
-      <h1>From</h1>
+    <div>
       <form onSubmit={handleSubmit}>
         <fieldset>
-          <legend>What game are you going to review?</legend>
-          <label htmlFor="">Game name: </label>
+          <legend>What game are you reviewing?</legend>
+          <label htmlFor="gamename">Game Name</label>
           <input
             type="text"
+            id="gamename"
             name="gamename"
             required
+            value={formData.gamename}
             onChange={handleInputChange}
           />
-          <label htmlFor="">name: </label>
+        </fieldset>
+        <fieldset>
+          <legend>Write your review</legend>
+          <label htmlFor="name">Your Name</label>
           <input
             type="text"
+            id="name"
             name="name"
             required
             value={formData.name}
             onChange={handleInputChange}
           />
-        </fieldset>
-
-        <fieldset>
-          <legend>Write out your review here</legend>
-          <label htmlFor="">Review: </label>
-          <input
-            type="text"
+          <label htmlFor="review">Review</label>
+          <textarea
+            id="review"
             name="review"
             required
+            rows="4"
             value={formData.review}
             onChange={handleInputChange}
-          />
+          ></textarea>
         </fieldset>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit Review</button>
       </form>
-    </>
+    </div>
   );
 }

@@ -53,7 +53,7 @@ app.get("/games-reviews", async (_, res) => {
 
 // Create new data in the reviews table
 app.post("/add-reviews", (req, res) => {
-  const { name, review, gamesid } = req.body; // THIS IS THE BODY
+  const { name, review, gamesid } = req.body;
   try {
     const query = db.query(
       `INSERT INTO review (name, review, games_id) VALUES ($1, $2, $3);`,
@@ -62,19 +62,6 @@ app.post("/add-reviews", (req, res) => {
     res.status(200).json({ success: true });
   } catch (error) {
     console.error("Error in add-reviews route", error);
-    res.status(500).json({ success: false });
-  }
-});
-
-// Delete an entry from my review table
-app.delete("/delete-review/:id", (req, res) => {
-  try {
-    const paramsId = req.params.id;
-    const query = db.query(`DELETE FROM review WHERE id = $1 RETURNING*;`, [
-      paramsId,
-    ]);
-  } catch (error) {
-    console.error("error in the delete-review route", error);
     res.status(500).json({ success: false });
   }
 });
