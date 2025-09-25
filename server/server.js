@@ -1,7 +1,7 @@
 // Basic set up
 import express from "express";
 import cors from "cors";
-// import { db } from "./dbConnection.js";
+import { db } from "./dbConnection.js";
 
 const app = express();
 app.use(express.json());
@@ -28,12 +28,12 @@ app.get("/games", async (_, res) => {
 });
 
 // Read data from my reviews table
-app.get("/reviews", async (_, res) => {
+app.get("/review", async (_, res) => {
   try {
-    const data = await db.query(`SELECT name FROM reviews;`);
+    const data = await db.query(`SELECT name, review FROM review;`);
     res.json(data.rows);
   } catch (error) {
-    console.error("Error in reviews route!", error);
+    console.error("Error in review route!", error);
     res.status(500).json({ success: fales });
   }
 });

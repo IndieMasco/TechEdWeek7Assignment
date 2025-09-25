@@ -2,31 +2,33 @@ import "./Reviews.css";
 
 import { useState, useEffect } from "react";
 
-export default function Games() {
-  const [games, setGames] = useState([]);
+export default function Reviews() {
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    async function getGamesData() {
+    async function getReviewsData() {
       try {
-        const response = await fetch("http://localhost:8080/games");
+        const response = await fetch("http://localhost:8080/games-reviews");
         const data = await response.json();
-        setGames(data);
+        setReviews(data.reverse());
       } catch (error) {
         console.error("API failed to fetch", error);
       }
     }
-    getGamesData();
-    const gamesInterval = setInterval(getGamesData, 3000);
-    return () => clearInterval(gamesInterval);
+    getReviewsData();
+    const reviewsInterval = setInterval(getReviewsData, 3000);
+    return () => clearInterval(reviewsInterval);
   }, []);
 
   return (
     <>
-      <h2>Games</h2>
-      {games.map((games) => {
+      <h2>Reviews</h2>
+      {reviews.map((review, index) => {
         return (
-          <div>
-            <h3>{games.name}</h3>
+          <div key={index}>
+            <h3>Game name: {review["Game name"]}</h3>
+            <p>User name: {review["Users name"]}</p>
+            <p>User review: {review["User review"]}</p>
           </div>
         );
       })}
