@@ -9,7 +9,7 @@ export default function Reviews() {
     async function getReviewsData() {
       try {
         const response = await fetch(
-          "https://techedweek7assignment-1.onrender.com/games-reviews"
+          import.meta.env.VITE_SOME_KEY + "/games-reviews"
         );
         const data = await response.json();
         setReviews(data.reverse());
