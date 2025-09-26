@@ -68,3 +68,7 @@ If there is anything you think I could do better or improve on, I'd be happy to 
 ### Styling
 
 [material web repo](https://github.com/material-components/material-web)
+
+### Env variables and modes
+
+[Env Variables and Modes](https://vite.dev/guide/env-and-mode)

@@ -1,3 +1,5 @@
+// import Footer from "../footer/Footer";
+
 import "./Home.css";
 
 export default function Home() {
