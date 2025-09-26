@@ -22,7 +22,7 @@ export default function Reviews() {
 
   return (
     <>
-      <h2 className="title">Reviews</h2>
+      <h2 className="rev-title">Reviews</h2>
       <div className="review-container">
         {reviews.map((review, index) => {
           return (

@@ -1,11 +1,24 @@
 @import "tailwindcss";
 
+/* Title */
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  text-align: center;
+  border-bottom: 2px solid #333;
+}
+
 /* General */
 .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
 
 .form {
