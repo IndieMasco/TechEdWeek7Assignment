@@ -10,6 +10,7 @@ export default function Home() {
           <h1 className="home-header">Welcome to The Game Loop</h1>
           <img
             className="home-image"
+            draggable="false"
             src={HomePage}
             alt="The main image for the home page"
           />

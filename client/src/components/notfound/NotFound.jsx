@@ -12,6 +12,7 @@ export default function NotFound() {
         </p>
         <img
           className="not-found-gif"
+          draggable="false"
           src="https://media1.tenor.com/m/fuiG0_pco2wAAAAd/confused-john-travolta.gif"
           alt="Confused John Travolta GIF"
         />
