@@ -19,11 +19,11 @@ app.get("/", (_, res) => {
 // Read data from my games table
 app.get("/games", async (_, res) => {
   try {
-    const data = await db.query(`SELECT name FROM games;`);
+    const data = await db.query(`SELECT id, name FROM games;`);
     res.json(data.rows);
   } catch (error) {
     console.error("Error in games route!", error);
-    res.status(500).json({ success: fales });
+    res.status(500).json({ success: false });
   }
 });
 
@@ -34,7 +34,7 @@ app.get("/review", async (_, res) => {
     res.json(data.rows);
   } catch (error) {
     console.error("Error in review route!", error);
-    res.status(500).json({ success: fales });
+    res.status(500).json({ success: false });
   }
 });
 
@@ -47,7 +47,7 @@ app.get("/games-reviews", async (_, res) => {
     res.json(data.rows);
   } catch (error) {
     console.error("Error in the game-reviews route!", error);
-    res.status(500).json({ success: fales });
+    res.status(500).json({ success: false });
   }
 });
 

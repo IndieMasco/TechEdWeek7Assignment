@@ -1,13 +1,30 @@
 import "./Form.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Form() {
+  const [games, setGames] = useState([]);
   const [formData, setFormData] = useState({
-    gamename: "",
+    gamesid: "",
     name: "",
     review: "",
   });
+
+  // Fetch the list of games
+  useEffect(() => {
+    async function fetchGames() {
+      try {
+        const response = await fetch("http://localhost:8080/games");
+        if (response.ok) {
+          const data = await response.json();
+          setGames(data);
+        }
+      } catch (error) {
+        console.error("An error occurred while fetching games:", error);
+      }
+    }
+    fetchGames();
+  }, []);
 
   // Handles the input fields
   const handleInputChange = (event) => {
@@ -19,6 +36,13 @@ export default function Form() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Checks if a game has been selected
+    if (!formData.gamesid) {
+      alert("Please select a game to review.");
+      return;
+    }
+
+    // End point for submitted form
     try {
       const response = await fetch("http://localhost:8080/add-reviews", {
         method: "POST",
@@ -28,33 +52,42 @@ export default function Form() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        setFormData({
-          gamename: "",
+        setFormData((prev) => ({
+          ...prev,
           name: "",
           review: "",
-        });
-      } else {
-        console.error("Failed to submit the review.");
+        }));
       }
     } catch (error) {
       console.error("An error occurred:", error);
     }
   };
 
+  // Form
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <fieldset>
           <legend>What game are you reviewing?</legend>
-          <label htmlFor="gamename">Game Name</label>
-          <input
-            type="text"
-            id="gamename"
-            name="gamename"
+          <label htmlFor="gamesid">Game Name</label>
+          <select
+            id="gamesid"
+            name="gamesid"
             required
-            value={formData.gamename}
+            value={formData.gamesid}
             onChange={handleInputChange}
-          />
+          >
+            {games.length > 0 && (
+              <option value="" disabled>
+                Select a Game
+              </option>
+            )}
+            {games.map((game) => (
+              <option key={game.id} value={game.id}>
+                {game.name}
+              </option>
+            ))}
+          </select>
         </fieldset>
         <fieldset>
           <legend>Write your review</legend>
