@@ -1,4 +1,4 @@
-import Footer from "../footer/Footer";
+// import Footer from "../footer/Footer";
 import "./Reviews.css";
 import { useState, useEffect } from "react";
 
@@ -9,7 +9,7 @@ export default function Reviews() {
     async function getReviewsData() {
       try {
         const response = await fetch(
-          import.meta.env.VITE_RENDER_KEY + "/games-reviews"
+          import.meta.env.VITE_SOME_KEY + "/games-reviews"
         );
         const data = await response.json();
         setReviews(data.reverse());
@@ -38,7 +38,7 @@ export default function Reviews() {
           );
         })}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
