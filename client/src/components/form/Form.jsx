@@ -1,4 +1,5 @@
 import "./Form.css";
+import Footer from "../footer/Footer";
 
 import { useState, useEffect } from "react";
 
@@ -66,8 +67,8 @@ export default function Form() {
   // Form
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <fieldset>
+      <form className="form" onSubmit={handleSubmit}>
+        <fieldset className="fieldset">
           <legend className="legend">What game are you reviewing?</legend>
           <label className="lable" htmlFor="gamesid">
             Game Name
@@ -93,7 +94,7 @@ export default function Form() {
           </select>
         </fieldset>
 
-        <fieldset>
+        <fieldset className="fieldset">
           <legend className="legend">Write your review</legend>
           <label className="lable" htmlFor="name">
             Your Name
@@ -120,7 +121,9 @@ export default function Form() {
             onChange={handleInputChange}
           ></textarea>
         </fieldset>
-        <button type="submit">Submit Review</button>
+        <button className="button" type="submit">
+          Submit Review
+        </button>
       </form>
     </div>
   );

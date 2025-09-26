@@ -53,7 +53,7 @@ If there is anything you think I could do better or improve on, I'd be happy to 
 
 # Errors or Bugs I Encountered
 
-...
+- When I originally filled out my form, I only added the POST endpoint for my table, so those responses were being saved, but the game ID was being saved as NULL. I need to fetch the game's ID as well.
 
 # What went really well and what could have gone better?
 

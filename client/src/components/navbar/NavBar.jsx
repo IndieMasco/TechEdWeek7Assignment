@@ -4,12 +4,19 @@ import "./NavBar.css";
 
 export default function NavBar() {
   return (
-    <>
+    <div className="nav-container">
+      <h1 className="header">The Game Loop</h1>
       <nav>
-        <Link to={"/"}>Home </Link>
-        <Link to={"/form"}>Form </Link>
-        <Link to={"/reviews"}>Reviews</Link>
+        <Link className="link" to={"/"}>
+          Home{" "}
+        </Link>
+        <Link className="link" to={"/form"}>
+          Form{" "}
+        </Link>
+        <Link className="link" to={"/reviews"}>
+          Reviews
+        </Link>
       </nav>
-    </>
+    </div>
   );
 }

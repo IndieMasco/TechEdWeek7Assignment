@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+/* General */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 500px;
+}
+
+.legend {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.fieldset {
+  margin-bottom: 25px;
+}
+
+.lable {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Input boxes */
+.game-list,
+.name-box,
+.text-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.text-box {
+  min-height: 200px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #b30000;
+}

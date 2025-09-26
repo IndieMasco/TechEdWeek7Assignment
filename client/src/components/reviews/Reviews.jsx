@@ -22,16 +22,20 @@ export default function Reviews() {
 
   return (
     <>
-      <h2>Reviews</h2>
-      {reviews.map((review, index) => {
-        return (
-          <div key={index}>
-            <h3>Game name: {review["Game name"]}</h3>
-            <p>User name: {review["Users name"]}</p>
-            <p>User review: {review["User review"]}</p>
-          </div>
-        );
-      })}
+      <h2 className="title">Reviews</h2>
+      <div className="review-container">
+        {reviews.map((review, index) => {
+          return (
+            <div key={index} className="review-card">
+              <h3 className="review-title"> {review["Game name"]}</h3>
+              <p className="review-name">
+                Reviewer's name: {review["Users name"]}
+              </p>
+              <p className="review-text">Review: {review["User review"]}</p>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 }
