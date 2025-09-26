@@ -4,8 +4,6 @@ This week's assignment is all about creating and maintaining apps that submit an
 
 I've found this assignment quite fun, as it closely followed the structure of the full-stack applications we built in weeks 4 and 5, but with the key difference of utilizing React. As usual, we were provided with a clear set of goals to meet, but also had complete creative freedom over the application's concept and design. I decided to build a game review platform, aiming to create a space where users can view community opinions and reviews on titles they are considering to buy.
 
-- after using react for two weeks im slowly starting to understand how it works with how the components talk to each other, the styling, how handy it is to reuse components ive still got a long way to but things are starting to stick
-
 After two weeks of working with React, I'm gaining a better understanding of it. The way components communicate with each other, passing props to share data and state. I've also begun to appreciate the efficiency of component reusability, which speeds up development and helps maintain a consistent look and feel across the application. Although I still have much to learn, the fundamental ideas of how React structures a UI are starting to stick with me.
 
 If there is anything you think I could do better or improve on, I'd be happy to listen and learn from what you have to say.
