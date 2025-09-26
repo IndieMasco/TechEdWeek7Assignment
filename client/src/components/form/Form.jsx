@@ -10,7 +10,7 @@ export default function Form() {
     review: "",
   });
 
-  // Fetch the list of games
+  // Fetch list of games
   useEffect(() => {
     async function fetchGames() {
       try {
@@ -26,13 +26,13 @@ export default function Form() {
     fetchGames();
   }, []);
 
-  // Handles the input fields
+  // Handles input fields
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handles the form submit
+  // Handles form submit
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -42,7 +42,7 @@ export default function Form() {
       return;
     }
 
-    // End point for submitted form
+    // Handles POST request to server
     try {
       const response = await fetch("http://localhost:8080/add-reviews", {
         method: "POST",
@@ -65,12 +65,15 @@ export default function Form() {
 
   // Form
   return (
-    <div>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
         <fieldset>
-          <legend>What game are you reviewing?</legend>
-          <label htmlFor="gamesid">Game Name</label>
+          <legend className="legend">What game are you reviewing?</legend>
+          <label className="lable" htmlFor="gamesid">
+            Game Name
+          </label>
           <select
+            className="game-list"
             id="gamesid"
             name="gamesid"
             required
@@ -89,10 +92,14 @@ export default function Form() {
             ))}
           </select>
         </fieldset>
+
         <fieldset>
-          <legend>Write your review</legend>
-          <label htmlFor="name">Your Name</label>
+          <legend className="legend">Write your review</legend>
+          <label className="lable" htmlFor="name">
+            Your Name
+          </label>
           <input
+            className="name-box"
             type="text"
             id="name"
             name="name"
@@ -100,8 +107,11 @@ export default function Form() {
             value={formData.name}
             onChange={handleInputChange}
           />
-          <label htmlFor="review">Review</label>
+          <label className="lable" htmlFor="review">
+            Review
+          </label>
           <textarea
+            className="text-box"
             id="review"
             name="review"
             required
