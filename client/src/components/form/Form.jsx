@@ -44,13 +44,16 @@ export default function Form() {
 
     // Handles POST request to server
     try {
-      const response = await fetch("http://localhost:8080/add-reviews", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        import.meta.env.VITE_SOME_KEY + "/add-reviews",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       if (response.ok) {
         setFormData((prev) => ({
           ...prev,
