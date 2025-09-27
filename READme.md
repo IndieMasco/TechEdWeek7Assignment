@@ -67,7 +67,7 @@ This was the first time having to do a database schema. I ended up using Supabas
 
 # What went really well and what could have gone better?
 
-...
+- I finally beat the footer this week! I just took what I learned from the assignment last week, used it, and it totally worked. 🥳
 
 # External sources
 
