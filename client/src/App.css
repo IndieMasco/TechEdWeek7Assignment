@@ -322,6 +322,8 @@
 }
 
 /* === FOOTER === */
+
+/* Container */
 .footer-container {
   background-color: #333;
   color: #fff;
@@ -336,6 +338,7 @@
   justify-content: center;
 }
 
+/* Text */
 .text1 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -407,6 +410,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    width: 90%;
   }
 
   .legend {
