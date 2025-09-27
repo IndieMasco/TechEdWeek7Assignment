@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router";
 import HomePage from "./HomePage.png";
 
 export default function Home() {
@@ -21,6 +22,10 @@ export default function Home() {
             every gamer make the best purchase decisions. Your next great game
             is just a review away!
           </p>
+          <button className="broken">
+            <Outlet />
+            <Link to={"/*"}>Click for a secret achievement!</Link>
+          </button>
         </div>
       </div>
     </>

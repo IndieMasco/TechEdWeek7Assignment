@@ -94,6 +94,21 @@
   padding: 10px;
 }
 
+.broken {
+  padding: 10px 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #333;
+  color: #fff;
+}
+
+.broken:hover {
+  background-color: #ce2029;
+}
+
 /* === FORM === */
 
 /* Title */
