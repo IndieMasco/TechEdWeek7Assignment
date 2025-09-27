@@ -13,6 +13,7 @@ export default function Reviews() {
       );
       const data = await response.json();
       setReviews(data.reverse());
+      console.log(data);
     } catch (error) {
       console.error("API failed to fetch", error);
     }
