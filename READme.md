@@ -11,30 +11,13 @@ If there is anything you think I could do better or improve on, I'd be happy to 
 # Requirements
 
 - ✅ 🎯 Create a client using React.
-
-  - This goal has been done through out the client side of my app
-
 - ✅ 🎯 Create multiple pages using React Router.
-
-  - This goal has been done within `App.jsx` and `NavBar.jsx`
-
 - ✅ 🎯 Use Express to create your server, using both GET and POST endpoints.
 - ✅ 🎯 Use SQL to retrieve posts from the database in your Express server.
-
-  - Both of these goals have been done within `server.js`.
-
 - ✅ 🎯 Build a React form for users to create posts.
-
-  - This goal has been done within `Form.jsx`.
-
 - ✅ 🎯 Design a database schema, and seed the database with some realistic data.
-
-- I've added images to show this within `./images/Supabase`.
-
 - ✅ 🎯 Display all posts using .map().
 - ✅ 🎯 Use an interval and useEffect() to poll your database.
-
-  - Both of these goals have been done within `Reviews.jsx`
 
 # Stretch Requirements
 
@@ -42,11 +25,11 @@ If there is anything you think I could do better or improve on, I'd be happy to 
 
 # requirements that I wasn't able to achieve
 
-- 🏹 Create dynamic pages using react-router-dom.
-- 🏹 Use react-router-dom to create a dedicated route for the categories
+- ❌ 🏹 Create dynamic pages using react-router-dom.
+- ❌ 🏹 Use react-router-dom to create a dedicated route for the categories
   - For example, /posts/:categoryName.
-- 🏹 Add ‘like’ functionality on posts.
-- 🏹 Create additional SQL queries to show filtered posts.
+- ❌ 🏹 Add ‘like’ functionality on posts.
+- ❌ 🏹 Create additional SQL queries to show filtered posts.
 
 # Wireframe
 
