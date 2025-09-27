@@ -15,7 +15,7 @@ export default function Form() {
     async function fetchGames() {
       try {
         const response = await fetch(
-          import.meta.env.VITE_RENDER_KEY + `/games`
+          "https://techedweek7assignment.onrender.com/games"
         );
         if (response.ok) {
           const data = await response.json();
@@ -47,7 +47,7 @@ export default function Form() {
     // Handles POST request to server
     try {
       const response = await fetch(
-        import.meta.env.VITE_RENDER_KEY + `/add-reviews`,
+        "https://techedweek7assignment.onrender.com/add-reviews",
         {
           method: "POST",
           headers: {
