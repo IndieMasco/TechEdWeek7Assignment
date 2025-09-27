@@ -45,7 +45,7 @@ export default function Form() {
     // Handles POST request to server
     try {
       const response = await fetch(
-        "https://techedweek7assignment-1.onrender.com/add-reviews",
+        "https://techedweek7assignment.onrender.com/add-reviews",
         {
           method: "POST",
           headers: {
