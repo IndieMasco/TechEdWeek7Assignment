@@ -5,22 +5,47 @@ import { useState, useEffect } from "react";
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
 
-  useEffect(() => {
-    async function getReviewsData() {
-      try {
-        const response = await fetch(
-          "https://techedweek7assignment-1.onrender.com/games-reviews"
-        );
-        const data = await response.json();
-        setReviews(data.reverse());
-      } catch (error) {
-        console.error("API failed to fetch", error);
-      }
+  // Reviews
+  async function getReviewsData() {
+    try {
+      const response = await fetch(
+        import.meta.env.VITE_SOME_KEY + "/games-reviews"
+      );
+      const data = await response.json();
+      setReviews(data.reverse());
+    } catch (error) {
+      console.error("API failed to fetch", error);
     }
+  }
+
+  // Interval
+  useEffect(() => {
     getReviewsData();
     const reviewsInterval = setInterval(getReviewsData, 3000);
     return () => clearInterval(reviewsInterval);
   }, []);
+
+  // Delete handler
+  const handleDelete = async (reviewId) => {
+    if (!window.confirm("Are you sure you want to delete this review?")) {
+      return;
+    }
+
+    // Delete
+    try {
+      const response = await fetch(
+        import.meta.env.VITE_SOME_KEY + `/reviews/${reviewId}`,
+        {
+          method: "DELETE",
+        }
+      );
+      if (response.ok) {
+        getReviewsData();
+      }
+    } catch (error) {
+      console.error("An error occurred while deleting the review:", error);
+    }
+  };
 
   return (
     <>
@@ -28,12 +53,18 @@ export default function Reviews() {
       <div className="review-container">
         {reviews.map((review, index) => {
           return (
-            <div key={index} className="card">
+            <div key={review.id || index} className="card">
               <h3 className="card-title"> {review["Game name"]}</h3>
               <p className="card-name">
                 Reviewer's name: {review["Users name"]}
               </p>
               <p className="card-text">Review: {review["User review"]}</p>
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(review.id)}
+              >
+                Delete
+              </button>
             </div>
           );
         })}

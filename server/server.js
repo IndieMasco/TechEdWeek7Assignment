@@ -16,7 +16,9 @@ app.get("/", (_, res) => {
   res.send("Welcome");
 });
 
-// Read data from my games table
+//==========================================
+
+// Read data from games table
 app.get("/games", async (_, res) => {
   try {
     const data = await db.query(`SELECT id, name FROM games;`);
@@ -27,7 +29,7 @@ app.get("/games", async (_, res) => {
   }
 });
 
-// Read data from my reviews table
+// Read data from reviews table
 app.get("/review", async (_, res) => {
   try {
     const data = await db.query(`SELECT name, review FROM review;`);
@@ -38,12 +40,17 @@ app.get("/review", async (_, res) => {
   }
 });
 
-// Read data from the games and review
+// Read data from games and review
 app.get("/games-reviews", async (_, res) => {
   try {
     const data = await db.query(`
-    SELECT games.name AS "Game name", review.name AS "Users name", review.review AS "User review"
-    FROM review JOIN games ON games.id = review.games_id;`);
+      SELECT 
+        review.id,
+        games.name AS "Game name", 
+        review.name AS "Users name", 
+        review.review AS "User review"
+      FROM review 
+      JOIN games ON games.id = review.games_id;`);
     res.json(data.rows);
   } catch (error) {
     console.error("Error in the game-reviews route!", error);
@@ -51,7 +58,7 @@ app.get("/games-reviews", async (_, res) => {
   }
 });
 
-// Create new data in the reviews table
+// Create new data in reviews table
 app.post("/add-reviews", (req, res) => {
   const { name, review, gamesid } = req.body;
   try {
@@ -62,6 +69,25 @@ app.post("/add-reviews", (req, res) => {
     res.status(200).json({ success: true });
   } catch (error) {
     console.error("Error in add-reviews route", error);
+    res.status(500).json({ success: false });
+  }
+});
+
+// Delete a review
+app.delete("/reviews/:id", async (req, res) => {
+  const reviewId = req.params.id;
+  try {
+    const result = await db.query(`DELETE FROM review WHERE id = $1;`, [
+      reviewId,
+    ]);
+    if (result.rowCount === 0) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Review not found." });
+    }
+    res.status(200).json({ success: true, message: "Review deleted!" });
+  } catch (error) {
+    console.error("Error in delete review route", error);
     res.status(500).json({ success: false });
   }
 });
