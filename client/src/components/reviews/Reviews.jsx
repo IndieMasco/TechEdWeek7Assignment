@@ -9,7 +9,7 @@ export default function Reviews() {
   async function getReviewsData() {
     try {
       const response = await fetch(
-        import.meta.env.VITE_SOME_KEY + "/games-reviews"
+        "https://techedweek7assignment-1.onrender.com/games-reviews"
       );
       const data = await response.json();
       setReviews(data.reverse());
@@ -34,7 +34,7 @@ export default function Reviews() {
     // Delete
     try {
       const response = await fetch(
-        import.meta.env.VITE_SOME_KEY + `/reviews/${reviewId}`,
+        `https://techedweek7assignment-1.onrender.com/reviews/${reviewId}`,
         {
           method: "DELETE",
         }

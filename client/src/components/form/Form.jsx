@@ -45,7 +45,7 @@ export default function Form() {
     // Handles POST request to server
     try {
       const response = await fetch(
-        import.meta.env.VITE_SOME_KEY + "/add-reviews",
+        "https://techedweek7assignment-1.onrender.com/add-reviews",
         {
           method: "POST",
           headers: {
