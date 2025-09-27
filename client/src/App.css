@@ -114,6 +114,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .form {
@@ -204,6 +205,7 @@
   padding: 20px;
   max-height: 82vh;
   overflow-y: scroll;
+  margin-bottom: 30px;
 }
 
 /* Review card */
@@ -259,6 +261,7 @@
   min-height: 80vh;
   padding: 20px;
   text-align: center;
+  margin-bottom: 40px;
 }
 
 .not-found-content {
@@ -318,21 +321,48 @@
   background-color: #ce2029;
 }
 
+/* === FOOTER === */
+.footer-container {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 10px;
+  text-align: center;
+  width: 100%;
+  font-family: "Quantico", sans-serif;
+  border-top: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #ce2029;
+}
+
+.text2 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
 /* === MOBILE === */
 
 @media (max-width: 800px) {
-
   /* NAVBAR */
   .nav-container {
     flex-direction: column;
-    padding: 10px; 
+    padding: 10px;
     text-align: center;
   }
 
   .header {
     padding-left: 0;
     margin-bottom: 10px;
-    font-size: 2em; 
+    font-size: 2em;
   }
 
   .link {
@@ -349,9 +379,9 @@
 
   .home-container {
     padding: 20px;
-    margin: 0 10px; 
+    margin: 0 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 10px; 
+    border-radius: 10px;
   }
 
   .home-header {
@@ -389,22 +419,22 @@
   }
 
   .button {
-    padding: 10px; 
+    padding: 10px;
     font-size: 0.95rem;
   }
-  
+
   /* === REVIEWS === */
   .review-container {
-    padding: 10px 5px; 
-    max-height: none; 
-    overflow-y: visible; 
+    padding: 10px 5px;
+    max-height: none;
+    overflow-y: visible;
   }
-  
+
   .card {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    margin: 0 10px 15px 10px; 
+    margin: 0 10px 15px 10px;
   }
 
   .card-title {
@@ -451,5 +481,18 @@
   .not-found-link {
     padding: 12px 25px;
     font-size: 0.95rem;
+  }
+
+  .footer-container {
+    padding: 10px 5px;
+  }
+
+  .text1 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+
+  .text2 {
+    font-size: 0.8rem;
   }
 }

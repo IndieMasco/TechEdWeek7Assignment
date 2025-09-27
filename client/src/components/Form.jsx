@@ -108,6 +108,7 @@ export default function Form() {
               type="text"
               id="name"
               name="name"
+              placeholder="Gimli"
               required
               value={formData.name}
               onChange={handleInputChange}
@@ -119,6 +120,7 @@ export default function Form() {
               className="text-box"
               id="review"
               name="review"
+              placeholder="This game is amazing I've put over 100 hours into it"
               required
               rows="4"
               value={formData.review}

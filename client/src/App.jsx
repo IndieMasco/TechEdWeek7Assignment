@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Form from "./components/Form";
 import Reviews from "./components/Reviews";
 import NotFound from "./components/NotFound";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/reviews" element={<Reviews />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
