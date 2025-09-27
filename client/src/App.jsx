@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 
-import NavBar from "./components/navbar/NavBar";
-import Home from "./components/home/Home";
-import Form from "./components/form/Form";
-import Reviews from "./components/reviews/Reviews";
-import NotFound from "./components/notfound/NotFound";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import Form from "./components/Form";
+import Reviews from "./components/Reviews";
+import NotFound from "./components/NotFound";
 
 import "./App.css";
 

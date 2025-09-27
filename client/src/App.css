@@ -3,3 +3,453 @@
 :root {
   background-image: url(./Images/BackgroundImage.png);
 }
+
+/* === DESKTOP === */
+
+/* === NAVBAR === */
+
+/* Header container */
+.nav-container {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+/* Title */
+.header {
+  padding-left: 50px;
+  font-size: 2.5em;
+}
+
+/* Nav links */
+.link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.link:hover {
+  color: #ce2029;
+}
+
+/* === HOME === */
+
+/* Container */
+.home-page-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.home-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.home-header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #333;
+}
+
+/* Image */
+.home-image {
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+/* Text */
+.home-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #333;
+  text-align: justify;
+  padding: 10px;
+}
+
+/* === FORM === */
+
+/* Title */
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  background-color: #ffffff9f;
+  border-radius: 20px;
+}
+
+/* General */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 500px;
+}
+
+.legend {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.fieldset {
+  margin-bottom: 25px;
+}
+
+.lable {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Input boxes */
+.game-list,
+.name-box,
+.text-box {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.text-box {
+  min-height: 200px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #ce2029;
+}
+
+/* === REVIEWS === */
+
+/* Title */
+.review-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 250px;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  background-color: #ffffff9f;
+  border-radius: 20px;
+}
+
+/* Review Container */
+.review-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-height: 82vh;
+  overflow-y: scroll;
+}
+
+/* Review card */
+.card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 3px;
+}
+
+.card-name,
+.card-text {
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Delete button */
+.delete-button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #333;
+  color: #fff;
+}
+
+.delete-button:hover {
+  background-color: #ce2029;
+}
+
+/* === NOTFOUND === */
+
+/* Container */
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.not-found-content {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 550px;
+}
+
+/* Heading */
+.not-found-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+/* Text */
+.not-found-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* GIF */
+.not-found-gif {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Home link */
+.not-found-link {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.not-found-link:hover {
+  background-color: #ce2029;
+}
+
+/* === MOBILE === */
+
+@media (max-width: 800px) {
+
+  /* NAVBAR */
+  .nav-container {
+    flex-direction: column;
+    padding: 10px; 
+    text-align: center;
+  }
+
+  .header {
+    padding-left: 0;
+    margin-bottom: 10px;
+    font-size: 2em; 
+  }
+
+  .link {
+    word-spacing: 70px;
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  /* === HOME === */
+  .home-page-wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .home-container {
+    padding: 20px;
+    margin: 0 10px; 
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px; 
+  }
+
+  .home-header {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .home-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* === FORM & REVIEW TITLE === */
+  .form-title,
+  .review-title {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    max-width: 200px;
+  }
+
+  /* === FORM === */
+  .form {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .legend {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .fieldset {
+    margin-bottom: 15px;
+  }
+
+  .button {
+    padding: 10px; 
+    font-size: 0.95rem;
+  }
+  
+  /* === REVIEWS === */
+  .review-container {
+    padding: 10px 5px; 
+    max-height: none; 
+    overflow-y: visible; 
+  }
+  
+  .card {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    margin: 0 10px 15px 10px; 
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .card-name,
+  .card-text {
+    font-size: 0.95rem;
+  }
+
+  .delete-button {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+
+  /* === NOTFOUND === */
+  .not-found-container {
+    min-height: 85vh;
+    padding: 10px;
+  }
+
+  .not-found-content {
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .not-found-heading {
+    font-size: 2.5rem;
+  }
+
+  .not-found-text {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .not-found-gif {
+    margin: 0 auto 20px auto;
+    display: block;
+  }
+
+  .not-found-link {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+}

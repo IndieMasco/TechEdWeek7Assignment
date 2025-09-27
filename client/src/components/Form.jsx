@@ -1,5 +1,3 @@
-// import Footer from "../footer/Footer";
-import "./Form.css";
 import { useState, useEffect } from "react";
 
 export default function Form() {
@@ -132,7 +130,6 @@ export default function Form() {
           </button>
         </form>
       </div>
-      {/* <Footer /> */}
     </>
   );
 }

@@ -1,6 +1,4 @@
-// import Footer from "../footer/Footer";
 import HomePage from "./HomePage.png";
-import "./Home.css";
 
 export default function Home() {
   return (
@@ -25,7 +23,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
   );
 }

@@ -1,5 +1,3 @@
-// import Footer from "../footer/Footer";
-import "./Reviews.css";
 import { useState, useEffect } from "react";
 
 export default function Reviews() {
@@ -70,7 +68,6 @@ export default function Reviews() {
           );
         })}
       </div>
-      {/* <Footer /> */}
     </>
   );
 }
