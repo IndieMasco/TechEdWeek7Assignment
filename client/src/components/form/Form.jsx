@@ -14,7 +14,9 @@ export default function Form() {
   useEffect(() => {
     async function fetchGames() {
       try {
-        const response = await fetch(import.meta.env.VITE_SOME_KEY + "/games");
+        const response = await fetch(
+          "https://techedweek7assignment.onrender.com/games"
+        );
         if (response.ok) {
           const data = await response.json();
           setGames(data);
