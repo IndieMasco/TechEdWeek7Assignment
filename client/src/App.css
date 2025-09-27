@@ -340,16 +340,14 @@
 
 /* Text */
 .text1 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 5px;
-  color: #ce2029;
 }
 
 .text2 {
   font-size: 0.9rem;
   font-weight: 400;
-  opacity: 0.8;
 }
 
 /* === MOBILE === */
