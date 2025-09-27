@@ -7,7 +7,7 @@ export default function NotFound() {
         <h2 className="not-found-heading">404 Not Found</h2>
         <p className="not-found-text">
           Even John Travolta is here looking around, wondering where we put that
-          page.
+          secret achievement.
         </p>
         <img
           className="not-found-gif"
