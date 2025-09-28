@@ -121,6 +121,7 @@ export default function Form() {
               id="review"
               name="review"
               placeholder="This game is amazing I've put over 100 hours into it"
+              maxlength="500"
               required
               rows="4"
               value={formData.review}
