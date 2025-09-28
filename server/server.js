@@ -73,6 +73,10 @@ app.post("/add-reviews", (req, res) => {
   }
 });
 
+// === 🏹 STRETCH GOALS 🏹 ===
+
+// - 🏹 Allow users to delete posts
+
 // Delete a review
 app.delete("/reviews/:id", async (req, res) => {
   const reviewId = req.params.id;
@@ -88,6 +92,51 @@ app.delete("/reviews/:id", async (req, res) => {
     res.status(200).json({ success: true, message: "Review deleted!" });
   } catch (error) {
     console.error("Error in delete review route", error);
+    res.status(500).json({ success: false });
+  }
+});
+
+// - 🏹 Create additional SQL queries to show filtered posts
+
+// Users names
+app.get("/reviewers", async (_, res) => {
+  try {
+    const data = await db.query(`SELECT DISTINCT name FROM review;`);
+    res.json(data.rows.map((row) => row.name));
+  } catch (error) {
+    console.error("Error in reviewers route!", error);
+    res.status(500).json({ success: false });
+  }
+});
+
+// Review texts
+app.get("/just-reviews", async (_, res) => {
+  try {
+    // SQL: Select only the review column
+    const data = await db.query(`SELECT review FROM review;`);
+    res.json(data.rows.map((row) => row.review));
+  } catch (error) {
+    console.error("Error in just-reviews route!", error);
+    res.status(500).json({ success: false });
+  }
+});
+
+// Reviews Sam
+app.get("/reviews/user/sam", async (_, res) => {
+  try {
+    const data = await db.query(`
+      SELECT 
+        review.id, 
+        review.name AS "Reviewer Name", 
+        review.review AS "Review Text", 
+        games.name AS "Game Reviewed"
+      FROM review
+      JOIN games ON games.id = review.games_id
+      WHERE review.name = 'Sam';
+    `);
+    res.json(data.rows);
+  } catch (error) {
+    console.error("Error in reviews/user/sam route!", error);
     res.status(500).json({ success: false });
   }
 });

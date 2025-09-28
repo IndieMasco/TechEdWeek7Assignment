@@ -22,6 +22,7 @@ If there is anything you think I could do better or improve on, I'd be happy to 
 # Stretch Requirements
 
 - ✅ 🏹 Allow users to delete posts.
+- ✅ 🏹 Create additional SQL queries to show filtered posts.
 
 # requirements that I wasn't able to achieve
 
@@ -29,7 +30,6 @@ If there is anything you think I could do better or improve on, I'd be happy to 
 - ❌ 🏹 Use react-router-dom to create a dedicated route for the categories
   - For example, /posts/:categoryName.
 - ❌ 🏹 Add ‘like’ functionality on posts.
-- ❌ 🏹 Create additional SQL queries to show filtered posts.
 
 # Wireframe
 
